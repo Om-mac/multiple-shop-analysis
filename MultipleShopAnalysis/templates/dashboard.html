@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a> |
+        <a href="{{ url_for('add_sale') }}">Add Sale</a> |
+        <a href="{{ url_for('sales_table') }}">Sales Table</a> |
+        <a href="{{ url_for('analytics') }}">Analytics</a> |
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+<div class="sales-widget">
+  <h2>📈 Sales Summary</h2>
+  <p>Total Sales Today: <span id="total-sales">...</span></p>
+  <p>Best-Selling Item: <span id="best-item">...</span></p>
+  <p>Revenue Trend: <span id="trend-icon">...</span></p>
+  <canvas id="sparkline" width="200" height="50"></canvas>
+</div>
+<script src="static/script.js"></script>
+</body>
+</html>

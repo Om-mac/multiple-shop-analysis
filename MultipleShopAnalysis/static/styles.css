@@ -1,0 +1,308 @@
+/* =========================
+   Global Styles
+========================= */
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(145deg, #ffffff, #e0f2fe); /* soft gradient */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+/* =========================
+   Header / Navbar
+========================= */
+nav {
+    background: linear-gradient(90deg, #4f46e5, #3b82f6); /* vibrant gradient */
+    padding: 15px 0;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+nav a:hover {
+    color: #fcd34d; /* bright yellow hover */
+    text-shadow: 0 0 5px rgba(252, 211, 77, 0.7);
+}
+
+/* =========================
+   Headings
+========================= */
+h1, h2, h3 {
+    text-align: center;
+    margin-top: 20px;
+    color: #111827;
+}
+
+/* =========================
+   Forms (Register / Login / Add Sale)
+========================= */
+form {
+    background: linear-gradient(145deg, #ffffff, #e0f2fe);
+    max-width: 450px;
+    margin: 40px auto;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    text-align: center;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="date"]:focus,
+select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 8px rgba(79,70,229,0.3);
+    outline: none;
+}
+
+input[type="submit"],
+button {
+    background: linear-gradient(90deg, #4f46e5, #3b82f6);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    width: 100%;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 10px;
+}
+
+input[type="submit"]:hover,
+button:hover {
+    background: linear-gradient(90deg, #fcd34d, #fbbf24);
+    color: #111827;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(252,211,77,0.4);
+}
+
+/* =========================
+   Cards / Dashboard Stats
+========================= */
+.stats {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 30px auto;
+    max-width: 1100px;
+}
+
+.card {
+    background: linear-gradient(145deg, #ffffff, #e0f2fe);
+    width: 240px;
+    margin: 15px;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.card h3 {
+    color: #4f46e5;
+    font-size: 20px;
+}
+
+.card p {
+    font-size: 22px;
+    font-weight: bold;
+    color: #111827;
+}
+
+/* =========================
+   Sales Table
+========================= */
+table {
+    width: 90%;
+    max-width: 1000px;
+    margin: 30px auto;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    background: #ffffff;
+}
+
+th, td {
+    padding: 14px 18px;
+    text-align: left;
+}
+
+th {
+    background: linear-gradient(90deg, #4f46e5, #3b82f6);
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+tr:nth-child(even) {
+    background: #f3f4f6;
+}
+
+tr:hover {
+    background: #fef3c7;
+}
+
+/* =========================
+   Sales Table Filter Form
+========================= */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px auto;
+    max-width: 1000px;
+    padding: 15px;
+    background: linear-gradient(145deg, #ffffff, #e0f2fe);
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.filter-form label {
+    font-weight: 600;
+    color: #374151;
+    margin-right: 5px;
+}
+
+.filter-form select,
+.filter-form input[type="date"] {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.filter-form select:focus,
+.filter-form input[type="date"]:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 8px rgba(79,70,229,0.3);
+    outline: none;
+}
+
+.filter-form button {
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #4f46e5, #3b82f6);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.filter-form button:hover {
+    background: linear-gradient(90deg, #fcd34d, #fbbf24);
+    color: #111827;
+    box-shadow: 0 5px 15px rgba(252,211,77,0.4);
+}
+
+/* =========================
+   Sales Summary Widget
+========================= */
+.sales-widget {
+    background: linear-gradient(145deg, #ffffff, #e0f2fe);
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    margin: 30px auto;
+    max-width: 600px;
+    text-align: center;
+}
+
+.sales-widget h2 {
+    font-size: 24px;
+    color: #4f46e5;
+    margin-bottom: 15px;
+}
+
+.sales-widget p {
+    font-size: 18px;
+    margin: 10px 0;
+    color: #1f2937;
+}
+
+.sales-widget span {
+    font-weight: bold;
+    color: #111827;
+}
+
+/* =========================
+   Flash Messages
+========================= */
+.flash {
+    width: 80%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 15px;
+    border-radius: 12px;
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+
+.flash.success { background: linear-gradient(to right, #22c55e, #16a34a); }
+.flash.danger { background: linear-gradient(to right, #ef4444, #b91c1c); }
+.flash.info { background: linear-gradient(to right, #3b82f6, #2563eb); }
+
+/* =========================
+   Responsive
+========================= */
+@media (max-width: 768px) {
+    form, .card, table {
+        width: 90%;
+    }
+
+    .stats {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav a {
+        display: block;
+        margin: 8px 0;
+    }
+
+    .filter-form {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .sales-widget {
+        width: 90%;
+    }
+}

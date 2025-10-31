@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Analytics</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <nav>
+        <a href="{{ url_for('dashboard') }}">Dashboard</a> |
+        <a href="{{ url_for('add_sale') }}">Add Sale</a> |
+        <a href="{{ url_for('sales_table') }}">Sales Table</a> |
+        <a href="{{ url_for('analytics') }}">Analytics</a> |
+        <a href="{{ url_for('logout') }}">Logout</a>
+    </nav>
+    <hr>
+    <h2>Sales Analytics</h2>
+
+    <form method="GET">
+        Start Date: <input type="date" name="start_date">
+        End Date: <input type="date" name="end_date">
+        Quick Filter:
+        <select name="quick_filter">
+            <option value="">--None--</option>
+            <option value="today">Today</option>
+            <option value="week">This Week</option>
+            <option value="month">This Month</option>
+        </select>
+        <button type="submit">Analyze</button>
+    </form>
+
+    {% if chart_html %}
+    <div class="stats">
+        <div class="card">
+            <h3>Total Sales</h3>
+            <p>₹{{ total_sales }}</p>
+        </div>
+        <div class="card">
+            <h3>Average Sales/Day</h3>
+            <p>₹{{ avg_sales | round(2) }}</p>
+        </div>
+        <div class="card">
+            <h3>Top Category</h3>
+            <p>{{ top_category }}</p>
+        </div>
+        <div class="card">
+            <h3>Top Item</h3>
+            <p>{{ top_item }}</p>
+        </div>
+    </div>
+    {{ chart_html | safe }}
+    {% else %}
+        <p>No data found for selected date range.</p>
+    {% endif %}
+</body>
+</html>

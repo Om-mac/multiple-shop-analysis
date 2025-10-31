@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block title %}Add Sale{% endblock %}
+
+{% block content %}
+<h2>Add New Sale</h2>
+<form method="POST">
+    <label for="date">Date:</label>
+    <input type="date" name="date" required>
+
+    <label for="item_name">Item Name:</label>
+    <input type="text" name="item_name" placeholder="Enter item name" required>
+
+    <label for="category">Category:</label>
+    <input type="text" name="category" placeholder="Enter category" required>
+
+    <label for="quantity">Quantity:</label>
+    <input type="number" name="quantity" placeholder="Enter quantity" min="1" required>
+
+    <label for="price">Price:</label>
+    <input type="number" step="0.01" name="price" placeholder="Enter price per unit" min="0" required>
+
+    <input type="submit" value="Add Sale">
+</form>
+{% endblock %}

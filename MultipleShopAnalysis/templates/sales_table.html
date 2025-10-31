@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+
+{% block title %}Sales Table{% endblock %}
+
+{% block content %}
+<h2>Sales Table</h2>
+
+<form method="get" action="{{ url_for('sales_table') }}" class="filter-form">
+  <label for="quick_filter">Quick Filter:</label>
+  <select name="quick_filter" id="quick_filter">
+    <option value="">--Select--</option>
+    <option value="today">Today</option>
+    <option value="week">This Week</option>
+    <option value="month">This Month</option>
+  </select>
+
+  <label for="date">Or choose a date:</label>
+  <input type="date" name="date" id="date">
+
+  <button type="submit">Filter</button>
+</form>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Date</th>
+            <th>Item Name</th>
+            <th>Category</th>
+            <th>Quantity</th>
+            <th>Price</th>
+            <th>Total</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in data %}
+        <tr>
+            <td>{{ row['id'] }}</td>
+            <td>{{ row['date'] }}</td>
+            <td>{{ row['item_name'] }}</td>
+            <td>{{ row['category'] }}</td>
+            <td>{{ row['quantity'] }}</td>
+            <td>{{ row['price'] }}</td>
+            <td>{{ row['total'] }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
